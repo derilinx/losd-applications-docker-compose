@@ -1,0 +1,10 @@
+.env
+etc/.htpasswd
+nginx/ssl/
+*~
+/data
+/virt_db
+/virtuoso_db
+/mysqldata
+/moodle_data
+#*

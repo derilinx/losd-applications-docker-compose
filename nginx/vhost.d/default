@@ -1,0 +1,32 @@
+## Start of configuration add by letsencrypt container
+location ^~ /.well-known/acme-challenge/ {
+    auth_basic off;
+    allow all;
+    root /usr/share/nginx/html;
+    try_files $uri =404;
+    break;
+}
+## End of configuration add by letsencrypt container
+## start of configuration add by letsencrypt container
+location ^~ /.well-known/acme-challenge/ {
+    auth_basic off;
+    allow all;
+    root /usr/share/nginx/html;
+    try_files $uri =404;
+    break;
+}
+## End of configuration add by letsencrypt container
+
+
+location /olap {
+  proxy_pass http://olap:8000/;
+}
+
+location /cubeviz {
+  proxy_pass http://cubeviz:8000/;
+}
+
+location /json-qb {
+  proxy_pass http://json-qb:8000;
+}
+

@@ -1,0 +1,20 @@
+[submodule "docker-json-qb-api"]
+    url = https://github.com/LOSD-Data/docker-json-qb-api.git
+[submodule "docker-moodle"]
+    path = docker-moodle
+    url = git@github.com:derilinx/docker-moodle.git
+[submodule "juma-losd-docker_sp"]
+    path = juma-losd-docker_sp
+    url = git@github.com:derilinx/juma-losd-docker_sp.git
+[submodule "docker-olap-browser"]
+    path = docker-olap-browser
+    url = https://github.com/LOSD-Data/docker-olap-browser.git
+[submodule "docker-dataviz"]
+    path = docker-dataviz
+    url = git@github.com:derilinx/docker-dataviz.git
+[submodule "docker-rdfapi"]
+    path = docker-rdfapi
+    url = git@github.com:derilinx/docker-rdfapi.git
+[submodule "docker-cube-visualizer"]
+    path = docker-cube-visualizer
+    url = https://github.com/LOSD-Data/docker-cube-visualizer
