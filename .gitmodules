@@ -1,4 +1,5 @@
 [submodule "docker-json-qb-api"]
+    path = docker-json-qb-api
     url = https://github.com/LOSD-Data/docker-json-qb-api.git
 [submodule "docker-moodle"]
     path = docker-moodle
