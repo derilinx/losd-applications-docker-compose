@@ -91,9 +91,9 @@ SSH_PASSWORD_MOODLE=<your password>
 #### Sample shiro-users.properties file and its parameters:
 
 ```properties
-user.<your username1> = <your password>
-user.<your username2> = <your password>
-user.<your username3> = <your password>
-user.<your username4> = <your password>
-user.<your username5> = <your password>
+user.<your username 1> = <your password>
+user.<your username 2> = <your password>
+user.<your username 3> = <your password>
+user.<your username 4> = <your password>
+user.<your username 5> = <your password>
 ```
