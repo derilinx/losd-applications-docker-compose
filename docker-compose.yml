@@ -5,7 +5,7 @@ services:
   nginx-proxy:
     container_name: nginx-proxy
     restart: on-failure
-    image: jwilder/nginx-proxy:alpine
+    image: "jwilder/nginx-proxy:alpine"
     ports:
       - "80:80"
       - "443:443"
@@ -29,7 +29,7 @@ services:
       com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
   letsencrypt-nginx-proxy-companion:
     container_name: nginx-proxy-letsencrypt-sidecar
-    image: jrcs/letsencrypt-nginx-proxy-companion
+    image: "jrcs/letsencrypt-nginx-proxy-companion:latest"
     environment:
       - NGINX_PROXY_CONTAINER=nginx-proxy
     volumes:
@@ -82,6 +82,25 @@ services:
       - "./data/virtuoso:/data"
     ports:
       - "8890:8890"
+  virtuoso-statbank:
+    restart: always
+    hostname: $HOST_VIR_STAT
+    image: tenforce/virtuoso:1.3.1-virtuoso7.2.2
+    environment:
+      - SITE_SCHEME=https://
+      - SPARQL_UPDATE="true"
+      - DEFAULT_GRAPH="http://www.example.com/my-graph"
+      - VIRTUAL_HOST=${HOST_VIR_STAT}
+      - VIRTUAL_PROTO=http
+      - VIRTUAL_PORT=8890
+      - HOST=${HOST_VIR_STAT}
+      - SITE_HOST=${HOST_VIR_STAT}
+      - LETSENCRYPT_HOST=${HOST_VIR_STAT}
+      - LETSENCRYPT_EMAIL="dev@derilinx.com"
+    volumes:
+      - "./data/virtuoso_stat:/data"
+    ports:
+      - "8899:8890"
   olap:
     restart: on-failure
     hostname: $HOST_OLAP
@@ -207,7 +226,7 @@ services:
       - SITE_HOST=${HOST_RDFAPI}
       - SITE_SCHEME=https://
       - VIRTUAL_HOST=${HOST_RDFAPI}
-      - VIRTUAL_PROTO=http
+      - VIRTUAL_PROTO=uwsgi
       - LETSENCRYPT_HOST=${HOST_RDFAPI}
       - LETSENCRYPT_EMAIL="dev@derilinx.com"
       - RDFAPI_USERNAME=${RDFAPI_USERNAME}
