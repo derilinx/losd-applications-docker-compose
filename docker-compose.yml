@@ -209,6 +209,8 @@ services:
       - "./mysqldata/mysql:/var/lib/mysql"
       - "./mysqldata/mysql-files:/var/lib/mysql-files"
       - "./mysqldata/mysql-keyring:/var/liv/mysql-keyring"
+      - "./juma-losd-docker_sp/Juma-losd-docker_sp/juma-uplift-master/userfiles:/juma/juma-uplift-master/userfiles"
+      - "./juma-losd-docker_sp/Juma-losd-docker_sp/juma-api/index.php:/var/www/html/juma-api/index.php"
   rdfconv_api:
     restart: on-failure
     hostname: $HOST_RDFAPI
