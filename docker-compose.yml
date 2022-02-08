@@ -211,6 +211,7 @@ services:
       - "./mysqldata/mysql-keyring:/var/liv/mysql-keyring"
       - "./juma-losd-docker_sp/Juma-losd-docker_sp/juma-uplift-master/userfiles:/juma/juma-uplift-master/userfiles"
       - "./juma-losd-docker_sp/Juma-losd-docker_sp/juma-api/index.php:/var/www/html/juma-api/index.php"
+      - "./juma-losd-docker_sp/Juma-losd-docker_sp/juma-uplift-master/src/main/resources/shiro-users.properties:/juma/juma-uplift-master/src/main/resources/shiro-users.properties"
   rdfconv_api:
     restart: on-failure
     hostname: $HOST_RDFAPI
